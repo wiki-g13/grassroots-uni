@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div clas="col-md-12">
+        <div class="col-md-12">
 
 
                 <?php 
@@ -10,16 +10,13 @@
 
                 $logout_success = 'Logout was successful';
                 $password_changed = 'Password successfully changed';
+                $registration_success = "Registration successful, please login below!";
 
                 if (!empty($message)) 
                 {
                    
-                    if ($this->session->flashdata('message') == $logout_success) 
+                    if ($this->session->flashdata('message') == $logout_success || $password_changed || $registration_success) 
                     {
-                        echo "<div class=\"alert alert-success login-alert alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button><strong>Yippee!</strong><p>$message</p></div>";
-                    } 
-                    elseif ($this->session->flashdata('message') == $password_changed)
-                    { 
                         echo "<div class=\"alert alert-success login-alert alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button><strong>Yippee!</strong><p>$message</p></div>";
                     } 
                     else 
@@ -67,7 +64,7 @@
    
          
             <p style="margin:10px 0;"><a href="<?= base_url('forgot-password'); ?>">Forgot your password?</a></p>
-             
+
         </div>
     </div>
 </div>

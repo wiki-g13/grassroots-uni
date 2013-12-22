@@ -45,7 +45,6 @@ body {
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav pull-right">
-            	<li class="<?php if ( $this->uri->uri_string() == 'home' ) { echo "active"; } ?>"><a href="<?=base_url('home'); ?>">Home</a></li>
                 <li class="<?php if ( $this->uri->uri_string() == 'login' ) { echo "active"; } ?>"><a href="<?=base_url('login'); ?>">Login</a></li>
                 <li class="<?php if ( $this->uri->uri_string() == 'register' ) { echo "active"; } ?>"><a href="<?=base_url('register'); ?>">Register</a></li>
             </ul>

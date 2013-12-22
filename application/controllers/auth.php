@@ -334,13 +334,8 @@ class Auth extends CI_Controller {
 	function create_user()
 	{
 		//set page title
-		$this->data['title'] = "Create User";
+		$this->data['title'] = "Register";
 
-        //check if user is logged in and an admin
-		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin())
-		{
-			redirect('dashboard', 'refresh');
-		}
 
 		//validate form input
 		$this->form_validation->set_rules('first_name', 'First Name', 'required|xss_clean');
@@ -364,8 +359,8 @@ class Auth extends CI_Controller {
 		{
 			//check to see if we are creating the user
 			//redirect them back to the admin page
-			$this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Yippee!</strong><p>User created successfully!</p></div>');
-			redirect("admin/users", 'refresh');
+			$this->session->set_flashdata('message', '<p>Registration successful, please login below!</p>');
+			redirect("login", 'refresh');
 		}
 		else
 		{
@@ -417,10 +412,10 @@ class Auth extends CI_Controller {
 				'class' => 'form-control',
 			);
             
-            //store create user view into body variable
-			$this->data['body'] = 'admin/create_user';
+            //store create user view into body array
+			$this->data['body'] = 'auth/create_user';
 			//load template file
-			$this->load->view('admin/layout/template', $this->data);
+			$this->load->view('auth/layout/template', $this->data);
 		}
 	}
 

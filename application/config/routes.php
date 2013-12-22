@@ -39,14 +39,16 @@
 */
 
 $route['default_controller'] = "auth/login";
+
 /*
    Auth routes
 */
 $route['login']                     =  "auth/login";
 $route['forgot-password']           =  "auth/forgot_password";
 $route['logout']                    =  "auth/logout";
+$route['register']                  =  "auth/create_user";
 
-$route['dashboard']                    =  "dash";
+$route['dashboard']                 =  "dash";
 
 
 /* End of file routes.php */

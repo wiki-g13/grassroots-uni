@@ -38,7 +38,7 @@
 |
 */
 
-
+$route['default_controller'] = "auth/login";
 /*
    Auth routes
 */
@@ -46,8 +46,7 @@ $route['login']                     =  "auth/login";
 $route['forgot-password']           =  "auth/forgot_password";
 $route['logout']                    =  "auth/logout";
 
-$route['default_controller'] = "auth/login";
-$route['404_override'] = '';
+$route['dashboard']                    =  "dash";
 
 
 /* End of file routes.php */

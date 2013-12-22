@@ -26,7 +26,7 @@ class Auth extends CI_Controller {
                 //if the login is successful
                 //redirect them to the admin panel
                 $this->session->set_flashdata('message', $this->ion_auth->messages());
-                redirect('admin', 'refresh');
+                redirect('dashboard', 'refresh');
             }
             else
             {
@@ -339,7 +339,7 @@ class Auth extends CI_Controller {
         //check if user is logged in and an admin
 		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin())
 		{
-			redirect('admin', 'refresh');
+			redirect('dashboard', 'refresh');
 		}
 
 		//validate form input
@@ -433,7 +433,7 @@ class Auth extends CI_Controller {
         //check if user is logged in and admin
 		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin())
 		{
-			redirect('admin', 'refresh');
+			redirect('dashboard', 'refresh');
 		}
 
 		$user = $this->ion_auth->user($id)->row();
@@ -556,7 +556,7 @@ class Auth extends CI_Controller {
 		}
 		elseif (!$this->ion_auth->is_admin()) //remove this elseif if you want to enable this for non-admins
 		{
-			redirect('admin', 'refresh');
+			redirect('dashboard', 'refresh');
 		}
 		else
 		{
@@ -584,7 +584,7 @@ class Auth extends CI_Controller {
         //dont want non-admins deleting people by mistake or thinking they are hax0rz!
 	    if (!$this->ion_auth->is_admin()) 
 		{
-			redirect('admin');
+			redirect('dashboard');
 		}
 
         //root admin can never be deleted.

@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3" style="padding-top:60px;">
+        <div clas="col-md-12">
 
 
                 <?php 
@@ -30,16 +30,18 @@
                 }
 
                 ?> 
-            
 
-            <div class="panel panel-primary">
-                
-                <div class="panel-heading">
-                    <h3 class="panel-title">Login</h3>
-                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+
+
+
+            <h3>Login</h3>
                
 
-                <div class="panel-body">
+           
             
                     <?php echo form_open("login");?>
               
@@ -59,12 +61,13 @@
                             </label>
                         </div>
                     
-                        <input class="btn btn-lg btn-primary btn-block" name="submit" type="submit" value="Login">
+                        <input class="btn btn-success" name="submit" type="submit" value="Login">
                                   
                     <?php echo form_close();?>
-                </div>
-            </div>
-            <p class="text-center"><a href="<?= base_url('forgot-password'); ?>">Forgot your password?</a></p> 
+   
+         
+            <p style="margin:10px 0;"><a href="<?= base_url('forgot-password'); ?>">Forgot your password?</a></p>
+             
         </div>
     </div>
 </div>

@@ -1,7 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3" style="padding-top:60px;">
-
+        <div class="col-md-12">
                 <?php 
                 
                 $email_sent = "Password reset email sent, please check your email.";
@@ -26,14 +25,12 @@
                 ?> 
                 
 
-            <div class="panel panel-primary">
-                
-                <div class="panel-heading">
-                    <h3 class="panel-title">Forgot Password</h3>
-                </div>
-               
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
 
-                <div class="panel-body">
+                <h3>Forgot Password</h3>
 
                 	<p>Please enter your Email so we can send you an email to reset your password.</p>
             
@@ -44,13 +41,11 @@
                            <div class="help-block text-danger"><?php echo form_error($email['name']); ?></div>
                         </div>
             
-                        <input class="btn btn-lg btn-primary btn-block" name="submit" type="submit" value="Submit">
+                        <input class="btn btn-success" name="submit" type="submit" value="Submit">
                                   
                     <?php echo form_close();?>
 
-                </div>
-            </div>
-            <p class="text-center"><a href="<?= base_url('login'); ?>">Back to login</a></p> 
+            <p style="margin:10px 0;"><a href="<?=base_url('login'); ?>">Back to login</a></p> 
         </div>
     </div>
 </div>

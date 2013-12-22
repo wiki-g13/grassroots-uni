@@ -1,27 +1,23 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3" style="padding-top:60px;">
+        <div clas="col-md-12">
 
-            <img src="<?php echo base_url(); ?>assets/img/logo.png" alt="Trident Logo" style="display:block;margin:20px auto;"></img>
-
-            <div class="panel panel-primary">
-
-                
-                <div class="panel-heading">
-                    <h3 class="panel-title">Change Password</h3>
-                </div>
-                <?php 
+            <?php 
                 
                 if (!empty($message)) 
                 {         
                     //incorrect login
                     echo "<div class=\"alert alert-danger login-alert alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button><strong>Something went wrong!</strong>$message</div>";                            
                 }
-                        
-                ?>
-               
-               <div class="panel-body">
+            ?>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+
+            <h3>Reset Password</h3>
 
                <?php echo form_open('auth/reset_password/' . $code);?>
 
@@ -39,12 +35,11 @@
 
                 <?php echo form_input($user_id);?>
    
-                <input class="btn btn-lg btn-primary btn-block" name="submit" type="submit" value="Change">
+                <input class="btn btn-lg btn-success btn-block" name="submit" type="submit" value="Change">
 
                 <?php echo form_close();?>
 
 
-                </div>
             </div>
 
         </div>

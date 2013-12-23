@@ -2,20 +2,17 @@
     <div class="row">
         <div class="col-md-12">
 
+            <?php
 
-                <?php 
-
-                //ion auth is a pain when it comes to validation
-                //this is the quickest work around i could think of for success/error messages
 
                 $logout_success = 'Logout was successful';
                 $password_changed = 'Password successfully changed';
-                $registration_success = "Registration successful, please login below!";
+                $registration_success = 'Registration successful, please login below!';
 
                 if (!empty($message)) 
                 {
                    
-                    if ($this->session->flashdata('message') == $logout_success || $password_changed || $registration_success) 
+                    if ($this->session->flashdata('message') == $logout_success || $this->session->flashdata('message') == $password_changed || $this->session->flashdata('message') == $registration_success) 
                     {
                         echo "<div class=\"alert alert-success login-alert alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button><strong>Yippee!</strong><p>$message</p></div>";
                     } 
@@ -26,7 +23,7 @@
                     }
                 }
 
-                ?> 
+                ?>
 
         </div>
     </div>

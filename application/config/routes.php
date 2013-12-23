@@ -43,12 +43,37 @@ $route['default_controller'] = "auth/login";
 /*
    Auth routes
 */
+
 $route['login']                     =  "auth/login";
 $route['forgot-password']           =  "auth/forgot_password";
 $route['logout']                    =  "auth/logout";
 $route['register']                  =  "auth/create_user";
 
+/*
+   User dashboard routes
+*/
+
 $route['dashboard']                 =  "dash";
+$route['dashboard/news']            =  "news";
+
+/*
+   User settings routes routes
+*/
+
+$route['settings/change-password']  =  "auth/change_password";
+
+/*
+   Admin dashboard routes
+*/
+
+$route['admin/users']                               =  "auth/user_management";
+$route['admin/users/delete/(:num)']                 =  "auth/delete_user/$1";
+$route['admin/users/edit/(:num)']                   =  "auth/edit_user/$1";
+$route['admin/news']                                =  "news/news_management";
+$route['admin/news/add']                            =  "news/add_news";
+$route['admin/news/edit/(:num)']                    =  "news/edit_news/$1";
+$route['admin/news/delete/(:num)']                  =  "news/delete_news/$1";
+
 
 
 /* End of file routes.php */

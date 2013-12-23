@@ -44,7 +44,7 @@ class Auth extends CI_Controller {
             {
                 $this->data['message'] = "<p>Check the form for errors</p>";
             }
-            else
+            if($this->session->flashdata('message'))
             {
                 $this->data['message'] = $this->session->flashdata('message');
             }
@@ -66,7 +66,7 @@ class Auth extends CI_Controller {
                 'placeholder' => 'Password',
             );
 
-            //Load view into body variable            
+            //Load view into body array           
             $this->data['body'] = "auth/login"; 
             //Load template view
             $this->load->view('auth/layout/template', $this->data);
@@ -81,7 +81,7 @@ class Auth extends CI_Controller {
 
 		//redirect them to the login page
 		$this->session->set_flashdata('message', "Logout was successful");
-		redirect('login', 'refresh');
+		redirect('login');
 	}
 
 	//change password
@@ -143,8 +143,8 @@ class Auth extends CI_Controller {
 			);
 
 			//render
-			$this->data['body'] = 'admin/change_password';
-			$this->load->view('admin/layout/template', $this->data);
+			$this->data['body'] = 'dashboard/change_password';
+			$this->load->view('dashboard/layout/template', $this->data);
 		}
 		else
 		{
@@ -156,12 +156,12 @@ class Auth extends CI_Controller {
 			{
 				//if the password was successfully changed
 				$this->session->set_flashdata('message', 'Your password was successfully changed.');
-				redirect('admin/change-password', 'refresh');
+				redirect('settings/change-password', 'refresh');
 			}
 			else
 			{
-				$this->session->set_flashdata('message', 'Unable to change your password, please try again.');
-				redirect('admin/change-password', 'refresh');
+				$this->session->set_flashdata('message', '<p>Unable to change your password, please try again.</p>');
+				redirect('settings/change-password', 'refresh');
 			}
 		}
 	}
@@ -359,7 +359,7 @@ class Auth extends CI_Controller {
 		{
 			//check to see if we are creating the user
 			//redirect them back to the admin page
-			$this->session->set_flashdata('message', '<p>Registration successful, please login below!</p>');
+			$this->session->set_flashdata('message', 'Registration successful, please login below!');
 			redirect("login", 'refresh');
 		}
 		else
@@ -535,7 +535,7 @@ class Auth extends CI_Controller {
         //store edit user view into body variable
         $this->data['body'] = 'admin/edit_user';
         //load template view
-		$this->load->view('admin/layout/template', $this->data);
+		$this->load->view('dashboard/layout/template', $this->data);
 	}
 
 
@@ -570,7 +570,7 @@ class Auth extends CI_Controller {
             //store user_management view into variable
 			$this->data['body'] = 'admin/user_management';
 			//load template view
-			$this->load->view('admin/layout/template', $this->data);
+			$this->load->view('dashboard/layout/template', $this->data);
 		}
 	}
 

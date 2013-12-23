@@ -13,10 +13,10 @@
 
 <!-- Bootstrap core CSS -->
 <link href="<?=base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
-
 <style type="text/css">
-body {
-	padding-top:70px;
+
+.admin-content {
+    margin: 50px 0;
 }
 </style>
 
@@ -31,7 +31,7 @@ body {
 <body>
 
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -44,7 +44,6 @@ body {
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav pull-right">
-                <li class="active"><a href="<?=base_url('admin'); ?>">Home</a></li>
                 <li><a href="<?=base_url('logout'); ?>">Logout</a></li>
             </ul>
         </div><!--/.nav-collapse -->
@@ -53,4 +52,38 @@ body {
 
 
 
+<div class="container">
+    <div class="row">
+       
+        <div class="col-md-3" >
 
+                <p class="lead">User Nav</p>
+   
+                <div class="list-group">
+                    <a href="<?=base_url('dashboard'); ?>" class="list-group-item <?php if ( $this->uri->uri_string() == 'dashboard' ) { echo "active"; } ?>">Dashboard</a>
+                    <a href="<?=base_url('dashboard/news'); ?>" class="list-group-item <?php if ( $this->uri->uri_string() == 'dashboard/news' ) { echo "active"; } ?>">News</a>
+                </div>
+
+                <p class="lead">Settings</p>
+
+                <div class="list-group">
+
+                    <a href="<?=base_url('settings/change-password'); ?>" class="list-group-item <?php if ( $this->uri->uri_string() == 'settings/change-password' ) { echo "active"; } ?>">Change Password</a>
+
+                </div>    
+
+                <p class="lead">Admin</p>  
+
+                <div class="list-group">
+                    <?php  
+                    //only show this link to the admin group...
+                    if ($this->ion_auth->is_admin()) { ?>
+                    <a href="<?=base_url('admin/users'); ?>" class="list-group-item <?php if ( $this->uri->uri_string() == 'admin/users' ) { echo "active"; } ?>">User Management</a>
+                     <a href="<?=base_url('admin/news'); ?>" class="list-group-item <?php if ( $this->uri->uri_string() == 'admin/news' ) { echo "active"; } ?>">News Management</a>
+                    <?php } ?>
+                </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="panel panel-default admin-content">
+                <div class="panel-body">

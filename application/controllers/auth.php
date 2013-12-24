@@ -346,13 +346,13 @@ class Auth extends CI_Controller {
 
 		if ($this->form_validation->run() == true)
 		{
-			$username = ucfirst($this->input->post('first_name')) . ' ' . strtolower($this->input->post('last_name'));
+			$username = ucfirst($this->input->post('first_name')) . ' ' . ucfirst($this->input->post('last_name'));
 			$email    = strtolower($this->input->post('email'));
 			$password = $this->input->post('password');
 
 			$additional_data = array(
-				'first_name' => $this->input->post('first_name'),
-				'last_name'  => $this->input->post('last_name'),
+				'first_name' => ucfirst($this->input->post('first_name')),
+				'last_name'  => ucfirst($this->input->post('last_name')),
 			);
 		}
 		if ($this->form_validation->run() == true && $this->ion_auth->register($username, $password, $email, $additional_data))

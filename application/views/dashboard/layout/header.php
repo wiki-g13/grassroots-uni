@@ -72,16 +72,18 @@
 
                 </div>    
 
+                <?php  // only admins can views this
+                if ($this->ion_auth->is_admin()) { ?>
+
                 <p class="lead">Admin</p>  
 
                 <div class="list-group">
-                    <?php  
-                    //only show this link to the admin group...
-                    if ($this->ion_auth->is_admin()) { ?>
                     <a href="<?=base_url('admin/users'); ?>" class="list-group-item <?php if ( $this->uri->uri_string() == 'admin/users' ) { echo "active"; } ?>">User Management</a>
                      <a href="<?=base_url('admin/news'); ?>" class="list-group-item <?php if ( $this->uri->uri_string() == 'admin/news' ) { echo "active"; } ?>">News Management</a>
-                    <?php } ?>
+                    
                 </div>
+
+                <?php } ?>
         </div>
 
         <div class="col-md-9">

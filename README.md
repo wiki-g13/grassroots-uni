@@ -39,7 +39,7 @@ _Member - john@doe.com / password_
 2. Download the files from this repo
 3. Place files into your github folder
 4. Load up XAMPP, run apache and mysql 
-5. Open up the mysql admin and create a database
+5. Open up the mysql admin, create a database & import the sql file you downloaded.
 6. navigate back to the site files and go to application/config/database.php and fill in your info
 7. SHOULD BE UP AND RUNNING - GO AHEAD AND LOGIN 
 

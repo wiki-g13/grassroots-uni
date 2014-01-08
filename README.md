@@ -35,7 +35,7 @@ _Member - john@doe.com / password_
 
 ### Installation (get working on your machine) :
 ***
-1. Download the SQL file [HERE](https://www.dropbox.com/s/7gm0kfnetcur8dc/graham.sql)
+1. Download the SQL file [HERE](https://www.dropbox.com/s/tpoc63rsywkfg9n/graham.sql)
 2. Download the files from this repo
 3. Place files into your github folder
 4. Load up XAMPP, run apache and mysql 
